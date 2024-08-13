@@ -1,0 +1,219 @@
+{
+	
+	"user": {
+		"fields": {
+			"name": {
+				"type": "string",
+				"minLength": 2,
+				"maxLength": 50,
+				"required": true
+			},
+			"phone": {
+				"type": "string",
+				"minLength": 10,
+				"maxLength": 13,
+				"unique": true,
+				"required": true
+			},
+			"email": {
+				"type": "string",
+				"format": "email",
+				"minLength": 10,
+				"maxLength": 30,
+				"unique": true,
+				"required": true
+			},
+			"type": {
+				"type": "boolean",
+				"allowedValues": [
+					"creator",
+					"user",
+					"admin"
+				],
+				"required": true
+			},
+			"Status": {
+				"type": "string",
+				"minLength": 2,
+				"maxLength": 50,
+				"required": true
+			},
+			"password": {
+				"type": "string",
+				"minLength": 4,
+				"maxLength": 50,
+				"required": true
+			},
+			"location": {
+				"type": "string",
+				"required": true,
+				"minLength": 4,
+				"maxLength": 50
+			},
+			"Approved": {
+				"type": "string",
+				"required": true
+			}
+		}
+	},
+	"book": {
+		"fields": {
+			"name": {
+				"type": "string",
+				"minLength": 3,
+				"required": true
+			},
+			"author": {
+				"type": "string",
+				"minLength": 3,
+				"required": true
+			},
+			"category": {
+				"type": "string",
+				"minValue": 3,
+				"required": true
+			},
+			"owner_id": {
+				"type": "number",
+				"required": true
+			}
+		}
+	},
+	"choice": {
+		"fields": {
+			"type": {
+				"type": "string",
+				"minLength": 3,
+				"required": true
+			},
+			"label": {
+				"type": "string",
+				"minLength": 3,
+				"required": true
+			},
+			"value": {
+				"type": "string",
+				"minValue": 3,
+				"required": true
+			}
+		}
+	},
+	"basequestionary": {
+		"fields": {
+			"type": {
+				"type": "string",
+				"minLength": 3,
+				"required": true
+			},
+			"question": {
+				"type": "string",
+				"minLength": 3,
+				"required": true
+			},
+			"name": {
+				"type": "string",
+				"minValue": 3,
+				"required": true
+			},
+			"created_by": {
+				"type": "string",
+				"minValue": 3,
+				"required": true
+			}
+		}
+	},
+	"bookupload": {
+		"fields": {
+			"quantity": {
+				"type": "string",
+				"minLength": 3,
+				"required": true
+			},
+			"book_id": {
+				"type": "string",
+				"minLength": 3,
+				"required": true
+			},
+			"price": {
+				"type": "string",
+				"minValue": 3,
+				"required": true
+			},
+			"owner_id": {
+				"type": "string",
+				"minValue": 3,
+				"required": true
+			},
+			"book_cover": {
+				"type": "string",
+				"minValue": 3,
+				"required": true
+			},
+			"status": {
+				"type": "string",
+				"minValue": 3,
+				"required": true
+			}
+		}
+	},
+	"rent": {
+		"fields": {
+			"quantity": {
+				"type": "string",
+				"minLength": 3,
+				"required": true
+			},
+			"upload_id": {
+				"type": "string",
+				"minLength": 3,
+				"required": true
+			},
+			"total_price": {
+				"type": "string",
+				"minValue": 3,
+				"required": true
+			},
+			"owner_id": {
+				"type": "string",
+				"minValue": 3,
+				"required": true
+			},
+			"date": {
+				"type": "string",
+				"minValue": 3,
+				"required": true
+			},
+			"status": {
+				"type": "string",
+				"minValue": 3,
+				"required": true
+			}
+		}
+	},
+	"attachment": {
+		"fields": {
+			"name": {
+				"type": "string",
+				"minLength": 1,
+				"required": true
+			},
+			"table": {
+				"type": "string",
+				"minLength": 1,
+				"required": true
+			},
+			"record": {
+				"type": "string",
+				"minValue": 1
+			},
+			"file_name": {
+				"type": "string",
+				"minValue": 5
+			},
+			"extension": {
+				"type": "string",
+				"minValue": 1
+			}
+		}
+	}
+}

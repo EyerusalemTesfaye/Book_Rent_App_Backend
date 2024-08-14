@@ -12,7 +12,7 @@ module.exports = async function (reqUser, authorization, input, dependencies, sm
             throw dependencies.exceptionHandling.throwError("Unauthorized user", 500);
         }
 
-        let validated = ZodValidation(UserValidator.create, input, dependencies);
+        let validated = ZodValidation(UserValidator.update, input, dependencies);
         // let validated = await dependencies.routingValidator.validatOnUpdateRecord("user", input);
         if (validated) {
 
@@ -24,11 +24,9 @@ module.exports = async function (reqUser, authorization, input, dependencies, sm
 
             if(foundUser) {
                 if (!reqUser || reqUser.Roles.includes("admin") || foundUser.id == reqUser.id) {
-                    if (input.password) {
-                        input.password = await dependencies.encryption.hash(input.password);
-                    }
 
                     const userData = FieldsMapper.mapFields(input, "user");
+                     userData.password = undefined;
 
                     return await dependencies.databasePrisma.user.update({
                         where: {

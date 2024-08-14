@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
+  "engines": {
+    "node": "20.x"
+  },
   "dependencies": {
     "@casl/ability": "^6.7.1",
     "@prisma/client": "^5.11.0",

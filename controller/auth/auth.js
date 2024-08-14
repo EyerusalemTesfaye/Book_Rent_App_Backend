@@ -24,7 +24,7 @@ module.exports = class AuthController {
                 throw this.dependencies.exceptionHandling.throwError("User not found", 404);
             }
 
-            if(user.Approved == "true") {
+            if(user.Approved != "true") {
                 throw this.dependencies.exceptionHandling.throwError("User is not approved yet", 404);
             }
 

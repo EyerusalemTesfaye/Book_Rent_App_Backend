@@ -15,10 +15,8 @@ module.exports = {
         Status: z.enum(Active).optional(),
         location: z.string().min(3, { message: "location should at least have 3 characters long" }).max(50, { message: "location should maximum be 50 characters long" }),
         Approved: z.enum(Active).optional()
-    })
-}
-module.exports = {
-    update: z.object({
+    }),
+     update: z.object({
         id: z.number().nonnegative().gt(0, { message: "id must be greater than 0!" }),
         email: z.string().email().min(6, { message: "email should at least be 6 character long" }),
         name: z.string().min(3, { message: "name should at least be 3 characters long" }).max(50, { message: "name should maximum be 50 characters long" }),
